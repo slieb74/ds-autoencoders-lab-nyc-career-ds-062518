@@ -289,6 +289,16 @@ plt.show()
 
 The model we just built was the simplest possible version of an autoencoder.  It did pretty well considering how small it is, but it still definitely lost some information and degraded the images during the process.  Let's build a deeper model and see how this affects our image degradation!
 
+In the cell below, complete the following layers:
+
+* `input_img` should be an `Input` layer of shape `(784,)`
+* `encoded_1` should be a Dense layer with 128 neurons, relu activation, and should be connected to `input_img`
+* `encoded_2` should be a Dense layer with 64 neurons, relu activation, and should be connected to `encoded_1`
+* `encoded_3` should be a Dense layer with 32 neurons, relu activation, and should be connected to `encoded_2`
+* `decoded_1` should be a Dense layer with 64 neurons, relu activation, and should be connected to `encoded_3`
+* `decoded_2` should be a Dense layer with 128 neurons, relu activation, and should be connected to `decoded_1`
+* `decoded_3` should be a Dense layer with 784 neurons, sigmoid activation, and should be connected to `decoded_2`
+
 
 ```python
 input_img = Input(shape=(784,))
@@ -660,3 +670,7 @@ In order to complete this optional section, you'll still need to:
 **_NOTE:_** You've been warned--this will likely take a very long time to train on a CPU.  If you don't have a GPU to train on, this will take a while!
 
 Try to complete the steps mentioned above and train your very own Deep Convolutional Autoencoder!
+
+## Sources
+
+[Keras Blog--Autoencoders in Keras](https://blog.keras.io/building-autoencoders-in-keras.html)
